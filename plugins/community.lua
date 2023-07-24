@@ -1,13 +1,13 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.colorscheme.nightfox"},
-  { import = "astrocommunity.colorscheme.kanagawa", enabled = true },
+  { import = "astrocommunity.colorscheme.nightfox-nvim", enabled = false },
+  { import = "astrocommunity.colorscheme.kanagawa-nvim", enabled = true },
+  { import = "astrocommunity.colorscheme.gruvbox-baby", lazy = false},
   { import = "astrocommunity.colorscheme.rose-pine" },
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.colorscheme.gruvbox-baby"},
-  { import = "astrocommunity.colorscheme.gruvbox" },
-  { import = "astrocommunity.media.vim-wakatime" },
+  { import = "astrocommunity.media.vim-wakatime", enabled = true, Lazy = false},
+  "AstroNvim/astrotheme",
   { -- further customize the options set by the community
     "catppuccin",
     opts = {
@@ -21,12 +21,12 @@ return {
         cmp = true,
         overseer = true,
         lsp_trouble = true,
-        ts_rainbow2 = false,
+        ts_rainbow2 = true,
       },
     },
   },
   { import = "astrocommunity.completion.copilot-lua" },
-  { -- further customize the options set by the 
+  { -- further customize the options set by the community
     "copilot.lua",
     opts = {
       suggestion = {
