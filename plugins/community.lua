@@ -4,7 +4,6 @@ return {
   { import = "astrocommunity.colorscheme.nightfox-nvim", enabled = false },
   { import = "astrocommunity.colorscheme.kanagawa-nvim", enabled = true },
   { import = "astrocommunity.colorscheme.gruvbox-baby", lazy = false},
-  { import = "astrocommunity.colorscheme.rose-pine" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.media.vim-wakatime", enabled = true, Lazy = false},
   "AstroNvim/astrotheme",
