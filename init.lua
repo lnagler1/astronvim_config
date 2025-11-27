@@ -13,6 +13,13 @@ if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
   end
 end
 
+vim.g.mkdp_browserfunc = "OpenMarkdownPreview"
+
+vim.api.nvim_create_user_command("OpenMarkdownPreview", function(opts)
+  local url = opts.args
+  vim.fn.jobstart({ "firefox", "--new-window", url }, { detach = true })
+end, { nargs = 1 })
+
 vim.opt.rtp:prepend(lazypath)
 
 -- validate that lazy is available

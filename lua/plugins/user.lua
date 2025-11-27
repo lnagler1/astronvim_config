@@ -1,13 +1,11 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
--- Here are some examples:
-
 ---@type LazySpec
 return {
 
-  -- == Examples of Adding Plugins ==
+  lsp = {
+    formatting = {
+      format_on_save = false, -- enable or disable automatic formatting on save
+    },
+  },
 
   "andweeb/presence.nvim",
   {
@@ -43,6 +41,17 @@ return {
   },
 
   -- You can disable default plugins as follows:
+  {
+    "mfussenegger/nvim-dap",
+    event = "VeryLazy",
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
+      "jay-babu/mason-nvim-dap.nvim",
+      "theHamsta/nvim-dap-virtual-text",
+    },
+  },
+
   { "max397574/better-escape.nvim", enabled = false },
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
@@ -85,4 +94,21 @@ return {
       )
     end,
   },
+  {
+    "kiyoon/jupynium.nvim",
+    build = "pip3 install --user .",
+    -- build = "uv pip install . --python=$HOME/.virtualenvs/jupynium/bin/python",
+    -- build = "conda run --no-capture-output -n jupynium pip install .",
+  },
+
+  {
+    "chomosuke/typst-preview.nvim",
+    lazy = false, -- or ft = 'typst'
+    version = "1.*",
+    opts = {}, -- lazy.nvim will implicitly calls `setup {}`
+  },
+  "rcarriga/nvim-notify", -- optional
+  "stevearc/dressing.nvim", -- optional, UI for :JupyniumKernelSelect
+
+  -- install with yarn or npm
 }
